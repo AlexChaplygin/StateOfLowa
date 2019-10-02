@@ -1,0 +1,31 @@
+<dataset>
+    <Voter id="1" date="2011-09-29" month="9" fips="121" county="Adair" democrat_active="144" democrat_inactive="112"
+           republican_active="144" libertarian_active="1" no_party_active="1" other_active="761" total_active="1444"
+           republican_inactive="1234" libertarian_inactive="177" no_party_inactive="1554" other_inactive="154"
+           total_inactive="1312"
+           grand_total="1333" primary_lat_dec="1" primary_long_dec="187" primary_county_coordinates="188"/>
+    <Voter id="2" date="2012-03-29" month="3" fips="143" county="Muscatine" democrat_active="6561"
+           democrat_inactive="13222"
+           republican_active="133" libertarian_active="341" no_party_active="1" other_active="441" total_active="1"
+           republican_inactive="1" libertarian_inactive="31" no_party_inactive="1555" other_inactive="1444"
+           total_inactive="133"
+           grand_total="1" primary_lat_dec="1" primary_long_dec="61" primary_county_coordinates="155"/>
+    <Voter id="3" date="2013-02-29" month="2" fips="1" county="Muscatine" democrat_active="1576"
+           democrat_inactive="1756"
+           republican_active="1" libertarian_active="166" no_party_active="22" other_active="331" total_active="1"
+           republican_inactive="1" libertarian_inactive="177" no_party_inactive="1" other_inactive="143424"
+           total_inactive="1111"
+           grand_total="1" primary_lat_dec="1" primary_long_dec="1" primary_county_coordinates="441"/>
+    <Voter id="4" date="2014-09-29" month="9" fips="1354" county="Adair" democrat_active="123424" democrat_inactive="1"
+           republican_active="166" libertarian_active="1354" no_party_active="4561" other_active="544541"
+           total_active="1"
+           republican_inactive="241" libertarian_inactive="1234" no_party_inactive="1567" other_inactive="1"
+           total_inactive="1232"
+           grand_total="1" primary_lat_dec="1764" primary_long_dec="1" primary_county_coordinates="1756"/>
+    <Voter id="5" date="2015-02-29" month="2" fips="198" county="Adair" democrat_active="1756"
+           democrat_inactive="1576"
+           republican_active="100" libertarian_active="1123" no_party_active="1" other_active="111" total_active="1"
+           republican_inactive="100" libertarian_inactive="1213" no_party_inactive="1" other_inactive="221"
+           total_inactive="1123"
+           grand_total="1231" primary_lat_dec="1123" primary_long_dec="13" primary_county_coordinates="11"/>
+</dataset>

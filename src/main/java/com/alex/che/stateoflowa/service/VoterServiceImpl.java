@@ -32,7 +32,7 @@ public class VoterServiceImpl implements VoterService {
     public List<VoterDTO> getVotersByParams(String county,
                                             Integer month,
                                             Integer limit) {
-        Pageable pageable = limit == null ? PageRequest.of(0, Integer.MAX_VALUE) : PageRequest.of(0, limit);
+        Pageable pageable = limit == null || limit == 0 ? PageRequest.of(0, Integer.MAX_VALUE) : PageRequest.of(0, limit);
 
         List<Voter> voters = voterRepository.getVotersByParams(county,
                 month,
