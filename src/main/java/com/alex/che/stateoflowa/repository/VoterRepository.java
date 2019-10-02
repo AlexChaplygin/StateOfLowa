@@ -1,6 +1,6 @@
-package com.alex.che.repository;
+package com.alex.che.stateoflowa.repository;
 
-import com.alex.che.entity.Voter;
+import com.alex.che.stateoflowa.entity.Voter;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

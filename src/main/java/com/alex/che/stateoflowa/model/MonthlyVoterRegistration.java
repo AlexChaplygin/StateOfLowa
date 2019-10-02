@@ -1,6 +1,6 @@
-package com.alex.che.model;
+package com.alex.che.stateoflowa.model;
 
-import com.alex.che.dto.VoterDTO;
+import com.alex.che.stateoflowa.dto.VoterDTO;
 import lombok.*;
 
 import java.util.List;

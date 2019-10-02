@@ -1,4 +1,4 @@
-package com.alex.che.dto;
+package com.alex.che.stateoflowa.dto;
 
 import lombok.Getter;
 import lombok.Setter;

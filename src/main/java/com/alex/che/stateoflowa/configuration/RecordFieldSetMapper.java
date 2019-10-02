@@ -1,6 +1,6 @@
 package com.alex.che.stateoflowa.configuration;
 
-import com.alex.che.entity.Voter;
+import com.alex.che.stateoflowa.entity.Voter;
 import org.springframework.batch.item.file.mapping.FieldSetMapper;
 import org.springframework.batch.item.file.transform.FieldSet;
 

@@ -1,6 +1,6 @@
-package com.alex.che.utils;
+package com.alex.che.stateoflowa.utils;
 
-import com.alex.che.entity.Voter;
+import com.alex.che.stateoflowa.entity.Voter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.batch.item.ItemProcessor;
 

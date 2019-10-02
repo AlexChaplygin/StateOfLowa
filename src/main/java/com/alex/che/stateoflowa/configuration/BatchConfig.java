@@ -2,8 +2,6 @@ package com.alex.che.stateoflowa.configuration;
 
 import javax.sql.DataSource;
 
-import com.alex.che.entity.Voter;
-import com.alex.che.utils.DBVotersLogProcessor;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;

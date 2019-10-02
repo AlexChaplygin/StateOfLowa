@@ -1,4 +1,4 @@
-package com.alex.che.entity;
+package com.alex.che.stateoflowa.entity;
 
 import lombok.Getter;
 import lombok.Setter;
