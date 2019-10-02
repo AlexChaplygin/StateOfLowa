@@ -1,15 +1,25 @@
 package com.alex.che.stateoflowa.model;
 
-import com.alex.che.stateoflowa.dto.VoterDTO;
-import lombok.*;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Getter;
+import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Builder
 @Getter
 @Setter
 public class MonthlyVoterRegistration {
-    private List<VoterDTO> data;
+
+    @JsonProperty("next_start")
+    private Integer nextStart;
+
+    private List<Map<String, String>> data = new ArrayList<>();
+
+    @JsonAnySetter
+    public void add(Map<String, String> dataMap) {
+        data.add(dataMap);
+    }
 }

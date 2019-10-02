@@ -8,7 +8,7 @@ import org.springframework.batch.item.ItemProcessor;
 public class DBVotersLogProcessor implements ItemProcessor<Voter, Voter> {
 
     public Voter process(Voter voter) {
-        System.out.println("Inserting employee : " + voter);
+        log.info("Inserting voter from CSV file : " + voter);
         return voter;
     }
 }

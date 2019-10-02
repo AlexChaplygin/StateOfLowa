@@ -6,6 +6,9 @@ import org.springframework.batch.item.file.transform.FieldSet;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
 import java.util.TimeZone;
 
 public class RecordFieldSetMapper implements FieldSetMapper<Voter> {
@@ -18,13 +21,17 @@ public class RecordFieldSetMapper implements FieldSetMapper<Voter> {
 
         String dateString = fieldSet.readString("Date");
         try {
+            Date date = dateFormat.parse(dateString);
+            LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+            int month = localDate.getMonthValue();
             voter.setDate(dateFormat.parse(dateString));
+            voter.setMonth(month);
         } catch (ParseException e) {
             e.printStackTrace();
         }
 
         voter.setFips(fieldSet.readString("FIPS"));
-        voter.setCountry(fieldSet.readString("County"));
+        voter.setCounty(fieldSet.readString("County"));
         voter.setDemocratActive(fieldSet.readString("Democrat - Active"));
         voter.setRepublicanActive(fieldSet.readString("Republican - Active"));
         voter.setLibertarianActive(fieldSet.readString("Libertarian - Active"));

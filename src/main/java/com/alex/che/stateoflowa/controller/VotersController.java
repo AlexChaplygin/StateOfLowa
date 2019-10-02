@@ -1,42 +1,24 @@
 package com.alex.che.stateoflowa.controller;
 
-import org.springframework.batch.core.Job;
-import org.springframework.batch.core.JobParameters;
-import org.springframework.batch.core.JobParametersBuilder;
-import org.springframework.batch.core.JobParametersInvalidException;
-import org.springframework.batch.core.launch.JobLauncher;
-import org.springframework.batch.core.repository.JobExecutionAlreadyRunningException;
-import org.springframework.batch.core.repository.JobInstanceAlreadyCompleteException;
-import org.springframework.batch.core.repository.JobRestartException;
+import com.alex.che.stateoflowa.dto.VoterDTO;
+import com.alex.che.stateoflowa.mapper.MonthlyVoterRegistrationMapper;
+import com.alex.che.stateoflowa.model.MonthlyVoterRegistration;
+import com.alex.che.stateoflowa.service.VoterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.PostConstruct;
+
+import java.util.List;
 
 @RestController
 @RequestMapping(value = "/")
 public class VotersController {
-
-    private JobLauncher jobLauncher;
-    private Job job;
     private VoterService voterService;
 
     @Autowired
-    public VotersController(JobLauncher jobLauncher,
-                            Job job,
-                            VoterService voterService) {
-        this.jobLauncher = jobLauncher;
-        this.job = job;
+    public VotersController(VoterService voterService) {
         this.voterService = voterService;
-    }
-
-    @PostConstruct
-    public void performJob() throws JobParametersInvalidException, JobExecutionAlreadyRunningException, JobRestartException, JobInstanceAlreadyCompleteException {
-        JobParameters params = new JobParametersBuilder()
-                .addString("JobID", String.valueOf(System.currentTimeMillis()))
-                .toJobParameters();
-        jobLauncher.run(job, params);
     }
 
     @GetMapping("/get_voters")
@@ -45,7 +27,7 @@ public class VotersController {
                                                                 @RequestParam(name = "party", required = false) String party,
                                                                 @RequestParam(name = "active_status", required = false) String active_status,
                                                                 @RequestParam(name = "limit", required = false) Integer limit) {
-        voterService.getVotersByParams(county, month, party, active_status, limit);
-        return ResponseEntity.ok(null);
+        List<VoterDTO> voterDTOS = voterService.getVotersByParams(county, month, limit);
+        return ResponseEntity.ok(MonthlyVoterRegistrationMapper.map(voterDTOS, limit, party));
     }
 }

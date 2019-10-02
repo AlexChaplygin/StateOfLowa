@@ -4,8 +4,9 @@ CREATE TABLE VOTER
 (
     id                         VARCHAR(100),
     date                       date,
+    month                      integer,
     fips                       VARCHAR(100),
-    country                    VARCHAR(100),
+    county                    VARCHAR(100),
     democrat_active            VARCHAR(100),
     democrat_inactive          VARCHAR(100),
     republican_active          VARCHAR(100),

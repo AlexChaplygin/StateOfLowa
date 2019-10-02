@@ -2,6 +2,8 @@ package com.alex.che.stateoflowa.configuration;
 
 import javax.sql.DataSource;
 
+import com.alex.che.stateoflowa.entity.Voter;
+import com.alex.che.stateoflowa.utils.DBVotersLogProcessor;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
@@ -105,8 +107,9 @@ public class BatchConfig {
         itemWriter.setDataSource(dataSource);
         itemWriter.setSql("INSERT INTO VOTER (" +
                 "date,\n" +
+                "month,\n" +
                 "fips,\n" +
-                "country,\n" +
+                "county,\n" +
                 "democrat_active,\n" +
                 "democrat_inactive,\n" +
                 "republican_active,\n" +
@@ -124,8 +127,9 @@ public class BatchConfig {
                 "primary_long_dec,\n" +
                 "primary_county_coordinates) VALUES (" +
                 ":date,\n" +
+                ":month,\n" +
                 ":fips,\n" +
-                ":country,\n" +
+                ":county,\n" +
                 ":democratActive,\n" +
                 ":democratInactive,\n" +
                 ":republicanActive,\n" +

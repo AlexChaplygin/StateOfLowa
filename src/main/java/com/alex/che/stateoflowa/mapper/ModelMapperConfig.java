@@ -1,4 +1,4 @@
-package com.alex.che.stateoflowa.configuration;
+package com.alex.che.stateoflowa.mapper;
 
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;

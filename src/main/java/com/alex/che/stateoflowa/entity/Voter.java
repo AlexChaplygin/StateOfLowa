@@ -21,11 +21,14 @@ public class Voter {
     @Column(name = "date")
     private Date date;
 
+    @Column(name = "month")
+    private Integer month;
+
     @Column(name = "fips")
     private String fips;
 
-    @Column(name = "country")
-    private String country;
+    @Column(name = "county")
+    private String county;
 
     @Column(name = "democrat_active")
     private String democratActive;
@@ -39,7 +42,7 @@ public class Voter {
     @Column(name = "libertarian_active")
     private String libertarianActive;
 
-    @Column(name = "no_arty_active")
+    @Column(name = "no_party_active")
     private String noPartyActive;
 
     @Column(name = "other_active")

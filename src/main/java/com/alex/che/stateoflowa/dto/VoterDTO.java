@@ -10,8 +10,9 @@ import java.util.Date;
 public class VoterDTO {
     private Long id;
     private Date date;
+    private Integer month;
     private String fips;
-    private String country;
+    private String county;
     private String democratActive;
     private String democratInactive;
     private String republicanActive;
